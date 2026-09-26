@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sayfa bulunamadı · Geleceğe Mektup</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --cream: #f5ede0; --ink: #2c1a0e; --ink-2: #5c3d2e; --rust: #b5451b; }
+  * { box-sizing: border-box; margin: 0; }
+  body { min-height: 100vh; display: grid; place-items: center; padding: 32px 16px; background: var(--cream); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, 'Segoe UI', sans-serif; text-align: center; }
+  body::before { content: ''; position: fixed; inset: 0 0 auto; height: 7px; background: repeating-linear-gradient(135deg, #b5451b 0 14px, #fbf6ec 14px 24px, #2c4a6e 24px 38px, #fbf6ec 38px 48px); }
+  svg { width: 170px; margin: 0 auto 28px; overflow: visible; }
+  .env { animation: drift 5s ease-in-out infinite; transform-origin: 50% 50%; }
+  @keyframes drift { 0%, 100% { transform: translate(0, 0) rotate(-6deg); } 50% { transform: translate(8px, -10px) rotate(4deg); } }
+  h1 { font: 400 clamp(2.2rem, 6vw, 3.4rem)/1.1 'Iowan Old Style', Georgia, serif; letter-spacing: -.02em; }
+  h1 em { color: var(--rust); }
+  p { margin: 16px auto 30px; max-width: 440px; color: var(--ink-2); }
+  a { display: inline-block; padding: 15px 26px; border-radius: 4px; background: var(--rust); color: #fff; text-decoration: none; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: .8rem; }
+  a:hover { background: var(--ink); }
+  @media (prefers-reduced-motion: reduce) { .env { animation: none; } }
+</style>
+</head>
+<body>
+<main>
+  <svg viewBox="0 0 170 130" aria-hidden="true">
+    <path d="M10 118 C 50 90, 80 128, 120 100 S 160 60, 168 40" fill="none" stroke="#c9b18f" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>
+    <g class="env">
+      <rect x="40" y="30" width="90" height="60" rx="4" fill="#f3e6cb" stroke="#b5451b" stroke-width="2.5"/>
+      <path d="M42 33 L85 64 L128 33" fill="none" stroke="#b5451b" stroke-width="2.5" stroke-linejoin="round"/>
+      <text x="85" y="84" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#b5451b">?</text>
+    </g>
+  </svg>
+  <h1>Bu mektup <em>yolunu kaybetmiş.</em></h1>
+  <p>Aradığın sayfa taşınmış ya da hiç var olmamış olabilir. Merak etme, zamanda kaybolan hiçbir şey tamamen kaybolmaz.</p>
+  <a id="home" href="/">Ana sayfaya dön</a>
+</main>
+<script>
+  (function () {
+    var seg = location.pathname.split('/').filter(Boolean);
+    var root = /\.github\.io$/.test(location.hostname) && seg.length ? '/' + seg[0] + '/' : '/';
+    document.getElementById('home').href = root;
+  })();
+</script>
+</body>
+</html>
